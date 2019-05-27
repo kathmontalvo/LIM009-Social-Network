@@ -12,8 +12,8 @@ export const listPosts = (publi) => {
         <div class="owner-post">
           <h3 class="font-size-post white ">Publicado por ${publi.doc.user} </h3>
             <select name="privacy" id="edit-privacy" class="hide ml-39"> 
-              <option value=${publi.doc.privacy}></option>
-              <option></option>
+              <option ${publi.doc.privacy=='private' ? 'selected = selected ': ''} value="private"> Solo yo </option>
+              <option ${publi.doc.privacy=='public' ? 'selected = selected' : ''} value="public">P�blico</option>
             </select>
             <div class="cross" id="delete"></div>
         </div>
@@ -102,15 +102,6 @@ export const listPosts = (publi) => {
 
   const privacy = div.querySelector('#edit-privacy');
 
-  if (privacy.options[0].value === 'public') {
-    privacy.options[0].innerHTML = 'Público'
-    privacy.options[1].setAttribute('value', 'private')
-    privacy.options[1].innerHTML = 'Solo yo'
-  } else if (privacy.options[0].value === 'private') {
-    privacy.options[0].innerHTML = 'Solo yo'
-    privacy.options[1].setAttribute('value', 'public');
-    privacy.options[1].innerHTML = 'Público'
-  }
   if (publi.doc.uid == currentUser().uid) {
     btnEditPost.classList.remove('hide')
     privacy.classList.remove('hide')

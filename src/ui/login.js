@@ -3,7 +3,7 @@ import { login, googleLogin, facebookLogin } from '../lib/view-controllers/auth.
 
 export const Login = () => {
   const div = document.createElement('div')
-  const back1 = `  
+  const printLogin = `  
     <div class="container1 container-bg">
       <img  class="someBg" src="assets/18984.jpg" alt="Some bg">
     </div>
@@ -14,23 +14,23 @@ export const Login = () => {
       <h4 class="px-4 subtitle-pass" >Bienvenidx!</h4>
   
       <div class="one-column">
-        <input id="email-login" type="email" placeholder="Email" class="input-text" />
+      <input id="email-login" type="email" placeholder="Email" class="input-text" />
         <input id="password-login" type="password" placeholder="Password" class="input-text" />
         <p class="error-message"></p>
         <button type="button" href="#/content" id="button-login-email" class="button-pass"> Log in </button>
-      </div>
-  
-      <p class="fs-20 px-15">O bien ingresa con...</p>
-  
-      <a class="devicon-google-plain gmail-color icon-size"id="google-login"></a>
-      <a class="devicon-facebook-plain facebook-color icon-size" id="fb-login"></a>
-      <div class="fs-20 px-0 "> ¿No tienes una cuenta? 
-      <a href="#/register" id="showRegister">Registrate</a> </div> 
-  
-    </div>
-  `;
+        </div>
+        
+        <p class="fs-20 px-15">O bien ingresa con...</p>
+        
+        <a class="devicon-google-plain gmail-color icon-size"id="google-login"></a>
+        <a class="devicon-facebook-plain facebook-color icon-size" id="fb-login"></a>
+        <div class="fs-20 px-0 "> ¿No tienes una cuenta? 
+        <a href="#/register" id="showRegister">Registrate</a> </div> 
+        
+        </div>
+        `;
   div.className = 'fluid-flex';
-  div.innerHTML = back1;
+  div.innerHTML = printLogin;
 
   const buttonLogInEmail = div.querySelector('#button-login-email');
   buttonLogInEmail.addEventListener('click', () => login());
@@ -43,3 +43,9 @@ export const Login = () => {
 
   return div
 };
+
+export const ShowErrorMessaggeDom = (error) => {
+  const pError = document.getElementsByTagName('p')[0];
+  pError.innerHTML = ` `;
+  pError.innerHTML = `${error.message}`;
+}

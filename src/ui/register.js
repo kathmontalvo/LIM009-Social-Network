@@ -1,7 +1,7 @@
 import { register } from '../lib/view-controllers/auth.js'
 
 export const Register = () => {
-  const string =
+  const printRegister =
     `
     <div class="container1 container-bg">
       <img  class="someBg" src="assets/18984.jpg" alt="Some bg">
@@ -22,7 +22,7 @@ export const Register = () => {
   `;
   const div = document.createElement('div')
   div.className = 'fluid-flex';
-  div.innerHTML = string;
+  div.innerHTML = printRegister;
 
   const nameSignin = div.querySelector('#name-signin');
   const buttonRegisterEmail = div.querySelector('#button-register');

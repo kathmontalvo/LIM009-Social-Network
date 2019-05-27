@@ -1,7 +1,7 @@
 import { initRoute } from './routes.js';
 
 // Initialize Firebase
-export const initFirebase = () => {
+const initFirebase = () => {
   const config = {
     apiKey: "AIzaSyDq83GdPtM8kOrF6BGhTuAkFFFC7T-ou2c",
     authDomain: "fir-basics-c204d.firebaseapp.com",

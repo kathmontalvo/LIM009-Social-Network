@@ -18,6 +18,8 @@ export const addNewComment = (input, id) => {
     addComment(input.value, user.name, user.uid, id)
       .then(ref => {
         console.log('Added document with ID: ', ref.id);
+
+        
       });
   })
 }
